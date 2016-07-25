@@ -13,6 +13,10 @@ import React, {
 } from 'react-native';
 class ImageDetailCmp extends React.Component {
 
+  // static propTypes = {
+  //   image: 
+  // };
+
   constructor(props) {
     super(props);
     this.image = props.image;
@@ -22,10 +26,16 @@ class ImageDetailCmp extends React.Component {
     };
   }
 
+
+  /*
+    Transition animation for image from a single card view to a full screen size!
+   */
   componentWillMount() {
    LayoutAnimation.spring();
   }
+
   componentDidMount(){
+    // make an image to full size of the screen.
     Animated.timing(this.state.h, {
         toValue: height * 1,
         duration: 500,
@@ -46,6 +56,9 @@ class ImageDetailCmp extends React.Component {
     }
   }
 
+  /*
+    Touch the image to go back to the previous navigation scene.
+   */
   render() {
     return(
       <View style={{flex :1}}>

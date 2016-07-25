@@ -18,6 +18,10 @@ import ScrollableTabView  from 'react-native-scrollable-tab-view';
 import ArticleList from './ArticleList';
 import AboutCmp from './AboutCmp';
 import BeautyCmp from './BeautyCmp';
+
+/*
+  Home, is the first scene. And in App.js, it sets Home.js as the initialroute. It map state to props.
+ */
 class Home extends React.Component {
 
   constructor(props) {

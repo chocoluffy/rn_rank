@@ -28,7 +28,6 @@ class BeautyCmp extends React.Component {
     }
 
     componentDidMount() {
-
         Animated.timing(this.state.progressValue, {
             toValue: width,
             duration: 1500,
@@ -146,6 +145,13 @@ const styles = StyleSheet.create({
     marginLeft: 10
   }
 });
+
+/*
+  State can be used as props, and be passed to next hierachial components. 
+  If you want the lower components to dispatch actions, we now need to pass the dispatch funciton down, or
+  we can utilize the second argument of the `connect()` function, which map dispatch to props, which will
+  allow us to pass only the actions down, instead of dispatch function!
+ */ 
 function mapStateToProps(state) {
   const {beautyReducers} = state;
   return {
